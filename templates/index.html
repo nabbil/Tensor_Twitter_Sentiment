@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Twitter Hashtag Sentiment Analysis</title>
-      <!-- Latest compiled and minified CSS -->
+    <meta charset="UTF-8">
+    <title>Twitter Hashtag Sentiment Analysis</title>
+    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -17,35 +18,37 @@
 </script>
 
 <style>
-    .img_holder img{
-        max-width: 100%; max-height: 100%;
+    .img_holder img {
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .btn-file {
-    position: relative;
-    overflow: hidden;
+        position: relative;
+        overflow: hidden;
     }
-
-
 </style>
 
 <body>
-<header class="navbar">
+    <header class="navbar">
 
 
-   <div style="text-align: center; margin-top: 20px">
-       <img id="display_image" style="max-width: 600px" src="{{ url_for('static', filename='twitterlogo.png') }}"/>
-   </div>
+        <div style="text-align: center; margin-top: 20px">
+            <img id="display_image" style="max-width: 600px" src="{{ url_for('static', filename='Tensor.jpg') }}" />
+        </div>
+        <h1 align="center">Tensor Solutions' Sentiment Analysis</h1>
 
-  <form action="/analyze" method="post" enctype="multipart/form-data" style="margin-top: 30px; width: 80%; text-align: center; margin: auto;" onsubmit="showloading()">
-          Enter hashtag : <input type="text" name="hashtag"><br><br>
-        <input type="submit" value="Analyze this hashtag!" class="btn btn-primary">
-  </form>
-    <div style="text-align: center">
-        <img id="loading_image" style="display: none" src="{{ url_for('static', filename='loading.gif')}}">
-    </div>
+        <form action="/analyze" method="post" enctype="multipart/form-data"
+            style="margin-top: 30px; width: 80%; text-align: center; margin: auto;" onsubmit="showloading()">
+            Enter a Twitter Hashtag : <input type="text" name="hashtag"><br><br>
+            <input type="submit" value="Analyze this hashtag!" class="btn btn-primary">
+        </form>
+        <div style="text-align: center">
+            <img id="loading_image" style="display: none" src="{{ url_for('static', filename='loading.gif')}}">
+        </div>
 
 
-</header>
+    </header>
 </body>
+
 </html>
